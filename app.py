@@ -1,4 +1,5 @@
 import streamlit as st
+import pickle
 from pathlib import Path
 import pandas as pd
 import numpy as np
