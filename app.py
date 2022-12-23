@@ -193,8 +193,6 @@ if authentication_status:
     st.sidebar.title(f"Bienvenid@ {name}")
     #### fondo al costado
 
-    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>CARGA TUS DATOS</b></p>', unsafe_allow_html=True)
-
     xs = ['Cardenas', 'Genesis', 'LLLERENAL', 'BERNEDO', 'CERVERA', 'CHUNGA', 'VIERA', 'RAYMUNDO', 'CABANILLAS', 'RIMARACHIN', 'BENAVIDES', 'YEREN', 'BELLIDO', 'ANDREA', 'SANTA ANA', 'POMA REYES', 'ECHEVARRIA', 'MORI', 'PAULINO', 'SALCEDO', 'MAYORCA', 'PRUDENCIO', 'HUAMANCHUMO', 'Argomedo', 'Hinostroza', 'Bot', 'YERSON', 'Roberto']
     #xs = ['Cardenas', 'LLLERENAL', 'Hinostroza', 'Argomedo', 'VIERA']
     bs = (username in xs)
@@ -211,7 +209,7 @@ if authentication_status:
 
                 import streamlit as st
                 import streamlit as st
-                #from streamlit_option_menu import option_menu
+                from streamlit_option_menu import option_menu
                 import pickle
                 from pathlib import Path
                 import pandas as pd
@@ -236,12 +234,17 @@ if authentication_status:
                 import re
 
 
-                col1, col2, col3 = st.columns(3)
+                col1, col2, col3, col4 = st.columns(4)
 
                 with col1:
                     tick = st.text_input('Tickets')
                 with col2:
                     celu = st.text_input('Numero')
+                with col3:
+                    codcli = st.text_input('codigo de cliente')
+                with col4:
+                    servi = st.text_input('servicio')
+
 
                     
 
@@ -286,49 +289,10 @@ if authentication_status:
                                                         )
                         cursor = cnxn.cursor()
 
-                        #cursor.execute("UPDATE bdtickets SET ESTADO = ?, GESTOR = ? WHERE codreq = ?", add, nom, adwe)
-                        sql = """
-                        SELECT codreq, CUSTOMERID_CRM__c, servicioAfectado, MENSAJE FROM bdtickets WHERE codreq = %s ;
-                        """
-                        ##TODO SIEMPRE PONER LA COMA
-                        cursor.execute(sql, (tick,))
-                        # fetch result
-                        record = cursor.fetchall()
-                        #print(record)
-                        #cursor.close()
-                        #cnxn.close()
-
-                        gian = pd.DataFrame(record)
-                        gian.columns = ['codreq', 'CUSTOMERID_CRM__c', 'servicioAfectado', 'MENSAJE']
-                        #for row in record:
-                        #    print("GESTOR = ", row[0], )
-                        #    print("codreq = ", row[1])
-                        #    print("FEC_CERRAR = ", row[2])
-                        #dfg = gian[gian['GESTOR'] == 'Giancarlos Cardenas']
-
-                        tick =gian["codreq"]
-                        tick = (tick.to_string(index=False))
-
-                        servi =gian["servicioAfectado"]
-                        servi = (servi.to_string(index=False))
-
-                        codcli =gian["CUSTOMERID_CRM__c"]
-                        codcli = (codcli.to_string(index=False))
-
-                        numllamada = (gian['MENSAJE'].unique())
-                        numllamada = (str(numllamada)[2:-2])
-                        #print(numllamada)
-                        sumu = int(numllamada) + 1
-
-
-                        sql = "INSERT INTO bdmensaje (codreq, FECHA_ENV, SMS) VALUES (%s, %s, %s)"
-                        val = (tick, tiempo, mensaje)
+                        sql = "INSERT INTO bdmensaje (codreq, FECHA_ENV, SMS, CEL_num) VALUES (%s, %s, %s, %s)"
+                        val = (tick, tiempo, mensaje, celu)
                         cursor.execute(sql, val)
                         #cnxn.commit()
-                        sql1 = "UPDATE bdtickets SET MENSAJE = %s WHERE codreq = %s"
-                        #sql1 = "INSERT INTO gestionacc (codreq, ACCION) VALUES (%s, %s)"
-                        val1 = (sumu, tick)
-                        cursor.execute(sql1, val1)
 
                         cnxn.commit()
                         cursor.close()

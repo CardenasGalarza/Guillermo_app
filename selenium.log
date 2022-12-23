@@ -1,0 +1,302 @@
+[1671762326.366][INFO]: Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 54391
+[1671762326.366][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1671762326.786][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--disable-features=NetworkService", "--window-size=1920x1080", "--disable-features=VizDisplayCompositor" ],
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1671762326.813][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1671762326.814][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1671762326.820][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-features=NetworkService,VizDisplayCompositor --disable-gpu --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --headless --log-level=0 --no-first-run --no-sandbox --no-service-autorun --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\51925\AppData\Local\Temp\scoped_dir10912_1739566241" --window-size=1920x1080 data:,
+[1671762327.457][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1671762327.471][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "108.0.5359.125",
+      "chrome": {
+         "chromedriverVersion": "108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016})",
+         "userDataDir": "C:\\Users\\51925\\AppData\\Local\\Temp\\scoped_dir10912_1739566241"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:54400"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "7b551ae0fbbb1351ca0891cec14038ff"
+}
+[1671762327.475][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND Navigate {
+   "url": "https://auth.movistaradvertising.com/login?logout"
+}
+[1671762327.475][INFO]: Waiting for pending navigations...
+[1671762327.479][INFO]: Done waiting for pending navigations. Status: ok
+[1671762330.864][INFO]: Waiting for pending navigations...
+[1671762332.022][INFO]: Done waiting for pending navigations. Status: ok
+[1671762332.022][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE Navigate
+[1671762333.024][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//INPUT[@id=\"username\"]"
+}
+[1671762333.024][INFO]: Waiting for pending navigations...
+[1671762333.027][INFO]: Done waiting for pending navigations. Status: ok
+[1671762333.040][INFO]: Waiting for pending navigations...
+[1671762333.041][INFO]: Done waiting for pending navigations. Status: ok
+[1671762333.042][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "9f140a16-76d2-4273-ab5f-e566385960d0"
+}
+[1671762333.043][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND TypeElement {
+   "id": "9f140a16-76d2-4273-ab5f-e566385960d0",
+   "text": "caramburu_TDP",
+   "value": [ "c", "a", "r", "a", "m", "b", "u", "r", "u", "_", "T", "D", "P" ]
+}
+[1671762333.043][INFO]: Waiting for pending navigations...
+[1671762333.045][INFO]: Done waiting for pending navigations. Status: ok
+[1671762333.091][INFO]: Waiting for pending navigations...
+[1671762333.091][INFO]: Done waiting for pending navigations. Status: ok
+[1671762333.091][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE TypeElement
+[1671762335.093][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//INPUT[@id=\"password\"]"
+}
+[1671762335.093][INFO]: Waiting for pending navigations...
+[1671762335.094][INFO]: Done waiting for pending navigations. Status: ok
+[1671762335.101][INFO]: Waiting for pending navigations...
+[1671762335.102][INFO]: Done waiting for pending navigations. Status: ok
+[1671762335.102][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "02567a4c-c52d-4136-83d5-4e6227812f10"
+}
+[1671762335.103][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND TypeElement {
+   "id": "02567a4c-c52d-4136-83d5-4e6227812f10",
+   "text": "WebSys29*T*",
+   "value": [ "W", "e", "b", "S", "y", "s", "2", "9", "*", "T", "*" ]
+}
+[1671762335.103][INFO]: Waiting for pending navigations...
+[1671762335.104][INFO]: Done waiting for pending navigations. Status: ok
+[1671762335.157][INFO]: Waiting for pending navigations...
+[1671762335.158][INFO]: Done waiting for pending navigations. Status: ok
+[1671762335.158][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE TypeElement
+[1671762337.161][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//BUTTON[@type=\"submit\"][text()=\"Ingresar\"]"
+}
+[1671762337.161][INFO]: Waiting for pending navigations...
+[1671762337.162][INFO]: Done waiting for pending navigations. Status: ok
+[1671762337.179][INFO]: Waiting for pending navigations...
+[1671762337.180][INFO]: Done waiting for pending navigations. Status: ok
+[1671762337.180][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "5257026f-0d2e-4814-9cf2-2fa907af50b0"
+}
+[1671762337.182][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND ClickElement {
+   "id": "5257026f-0d2e-4814-9cf2-2fa907af50b0"
+}
+[1671762337.182][INFO]: Waiting for pending navigations...
+[1671762337.183][INFO]: Done waiting for pending navigations. Status: ok
+[1671762337.227][INFO]: Waiting for pending navigations...
+[1671762344.879][INFO]: Done waiting for pending navigations. Status: ok
+[1671762344.879][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE ClickElement
+[1671762348.881][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//*[@id=\"dropdown-user-menu\"]/div/button[2]"
+}
+[1671762348.881][INFO]: Waiting for pending navigations...
+[1671762348.882][INFO]: Done waiting for pending navigations. Status: ok
+[1671762348.898][INFO]: Waiting for pending navigations...
+[1671762348.899][INFO]: Done waiting for pending navigations. Status: ok
+[1671762348.899][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "06764020-37ab-432e-98ff-fb56f673990d"
+}
+[1671762348.901][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND ClickElement {
+   "id": "06764020-37ab-432e-98ff-fb56f673990d"
+}
+[1671762348.901][INFO]: Waiting for pending navigations...
+[1671762348.902][INFO]: Done waiting for pending navigations. Status: ok
+[1671762348.965][INFO]: Waiting for pending navigations...
+[1671762348.975][INFO]: Done waiting for pending navigations. Status: ok
+[1671762348.975][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE ClickElement
+[1671762354.977][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//SPAN[@_ngcontent-c1=\"\"][text()=\"SMSi\"]"
+}
+[1671762354.977][INFO]: Waiting for pending navigations...
+[1671762354.978][INFO]: Done waiting for pending navigations. Status: ok
+[1671762354.986][INFO]: Waiting for pending navigations...
+[1671762354.987][INFO]: Done waiting for pending navigations. Status: ok
+[1671762354.987][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "a5fc305c-d8e1-4729-963d-41a7a68b6983"
+}
+[1671762354.988][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND ClickElement {
+   "id": "a5fc305c-d8e1-4729-963d-41a7a68b6983"
+}
+[1671762354.988][INFO]: Waiting for pending navigations...
+[1671762354.988][INFO]: Done waiting for pending navigations. Status: ok
+[1671762355.027][INFO]: Waiting for pending navigations...
+[1671762355.035][INFO]: Done waiting for pending navigations. Status: ok
+[1671762355.035][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE ClickElement
+[1671762359.037][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//INPUT[@id=\"inputGsmList\"]"
+}
+[1671762359.037][INFO]: Waiting for pending navigations...
+[1671762359.038][INFO]: Done waiting for pending navigations. Status: ok
+[1671762359.051][INFO]: Waiting for pending navigations...
+[1671762359.054][INFO]: Done waiting for pending navigations. Status: ok
+[1671762359.054][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "d4cb5eb8-57a5-4ffb-bf63-c0330e0bb194"
+}
+[1671762359.057][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND TypeElement {
+   "id": "d4cb5eb8-57a5-4ffb-bf63-c0330e0bb194",
+   "text": "925266696",
+   "value": [ "9", "2", "5", "2", "6", "6", "6", "9", "6" ]
+}
+[1671762359.057][INFO]: Waiting for pending navigations...
+[1671762359.062][INFO]: Done waiting for pending navigations. Status: ok
+[1671762359.235][INFO]: Waiting for pending navigations...
+[1671762359.237][INFO]: Done waiting for pending navigations. Status: ok
+[1671762359.237][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE TypeElement
+[1671762365.240][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//TEXTAREA[@id=\"txtMessage\"]"
+}
+[1671762365.240][INFO]: Waiting for pending navigations...
+[1671762365.243][INFO]: Done waiting for pending navigations. Status: ok
+[1671762365.260][INFO]: Waiting for pending navigations...
+[1671762365.261][INFO]: Done waiting for pending navigations. Status: ok
+[1671762365.261][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "b5a66648-d5d5-45e0-a1fb-47b591e29255"
+}
+[1671762365.263][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND TypeElement {
+   "id": "b5a66648-d5d5-45e0-a1fb-47b591e29255",
+   "text": "Hola, intentamos contactarte para solucionar la avería en tu ssaSAA aASSA, estaremos contactandote nuevamente, Movistar.",
+   "value": [ "H", "o", "l", "a", ",", " ", "i", "n", "t", "e", "n", "t", "a", "m", "o", "s", " ", "c", "o", "n", "t", "a", "c", "t", "a", "r", "t", "e", " ", "p", "a", "r", "a", " ", "s", "o", "l", "u", "c", "i", "o", "n", "a", "r", " ", "l", "a", " ", "a", "v", "e", "r", "í", "a", " ", "e", "n", " ", "t", "u", " ", "s", "s", "a", "S", "A", "A", " ", "a", "A", "S", "S", "A", ",", " ", "e", "s", "t", "a", "r", "e", "m", "o", "s", " ", "c", "o", "n", "t", "a", "c", "t", "a", "n", "d", "o", "t", "e", " ", "n", "u", "e", "v", "a", "m", "e", "n", "t", "e", ",", " ", "M", "o", "v", "i", "s", "t", "a", "r", "." ]
+}
+[1671762365.263][INFO]: Waiting for pending navigations...
+[1671762365.264][INFO]: Done waiting for pending navigations. Status: ok
+[1671762367.779][INFO]: Waiting for pending navigations...
+[1671762367.830][INFO]: Done waiting for pending navigations. Status: ok
+[1671762367.830][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE TypeElement
+[1671762373.832][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//BUTTON[@id=\"buttonProcess\"]"
+}
+[1671762373.832][INFO]: Waiting for pending navigations...
+[1671762373.833][INFO]: Done waiting for pending navigations. Status: ok
+[1671762373.846][INFO]: Waiting for pending navigations...
+[1671762373.847][INFO]: Done waiting for pending navigations. Status: ok
+[1671762373.847][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "687f2a66-dc13-49d3-b54d-94132431059a"
+}
+[1671762373.848][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND ClickElement {
+   "id": "687f2a66-dc13-49d3-b54d-94132431059a"
+}
+[1671762373.848][INFO]: Waiting for pending navigations...
+[1671762373.849][INFO]: Done waiting for pending navigations. Status: ok
+[1671762373.930][INFO]: Waiting for pending navigations...
+[1671762373.935][INFO]: Done waiting for pending navigations. Status: ok
+[1671762373.935][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE ClickElement
+[1671762379.937][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//*[@id=\"buttonSend\"]"
+}
+[1671762379.937][INFO]: Waiting for pending navigations...
+[1671762379.938][INFO]: Done waiting for pending navigations. Status: ok
+[1671762379.946][INFO]: Waiting for pending navigations...
+[1671762379.947][INFO]: Done waiting for pending navigations. Status: ok
+[1671762379.947][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "44b2ee6c-1f29-4088-8237-c897f90ac590"
+}
+[1671762379.948][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND ClickElement {
+   "id": "44b2ee6c-1f29-4088-8237-c897f90ac590"
+}
+[1671762379.948][INFO]: Waiting for pending navigations...
+[1671762379.948][INFO]: Done waiting for pending navigations. Status: ok
+[1671762379.997][INFO]: Waiting for pending navigations...
+[1671762380.002][INFO]: Done waiting for pending navigations. Status: ok
+[1671762380.002][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE ClickElement
+[1671762385.004][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] COMMAND Quit {
+}
+[1671762385.029][INFO]: [7b551ae0fbbb1351ca0891cec14038ff] RESPONSE Quit
