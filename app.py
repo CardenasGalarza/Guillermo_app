@@ -47,8 +47,8 @@ def add_bg_from_url():
 add_bg_from_url()
 #st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
 # --- USER AUTHENTICATION ---
-names = ['Giancarlos Cardenas', 'Genesis Medrano', 'Luis Llerena', 'DIANA BERNEDO', 'VIVIAN CERVERA', 'CAROL CHUNGA', 'LAURA VIERA', 'MERCEDES RAYMUNDO', 'MONTES CABANILLAS', 'RENZO RIMARACHIN', 'LORENA BENAVIDES', 'NANCY YEREN', 'GIULIANA BELLIDO', 'CARMEN HUAMANCHUMO', 'GABRIEL SANTA ANA', 'CARMEN POMA REYES', 'JOSE ECHEVARRIA', 'YORMAN MORI', 'ENZO PAULINO', 'GUSTAVO SALCEDO', 'KAREN MAYORCA', 'LESLIE PRUDENCIO', 'BARBARA HUAMANCHUMO', 'Jose Ricardo', 'Eber Hinostroza', 'Bot cardenas']
-usernames = ['Cardenas', 'Genesis', 'LLLERENAL', 'BERNEDO', 'CERVERA', 'CHUNGA', 'VIERA', 'RAYMUNDO', 'CABANILLAS', 'RIMARACHIN', 'BENAVIDES', 'YEREN', 'BELLIDO', 'ANDREA', 'SANTA ANA', 'POMA REYES', 'ECHEVARRIA', 'MORI', 'PAULINO', 'SALCEDO', 'MAYORCA', 'PRUDENCIO', 'HUAMANCHUMO', 'Argomedo', 'Hinostroza', 'Bot']
+names = ['YERINA GAMARRA', 'MARGOTH GONZALES', 'JHONATAN CORONADO', 'LUISA HUINCHO', 'JOSE SOLARTE', 'PATRICIA ZAPATA', ' ROJAS', 'GIOVANNA CALATAYUD', 'MIRELLA SEBASTIANI', 'SOFIA NOVOA', 'ZOILA CHAVEZ', 'YENY CARRION', 'AUGUSTO CHURATA', 'LUKI TORREJON', 'NAHUM SILVA', 'ARNOLD NAYAP', 'CLAUDIA USCUVILCA', 'FELIX BERNAOLA', 'LIZ ALMONACID', 'DAIVIS JULCARIMA', 'JULINHO HUAIRE', 'MILAGROS OTINIANO', 'WILSON ROJAS', 'ELOISA FLORES', ' NAPAN', 'ALFREDO SOBERON', 'KARINA PONCE', 'ESTHER SANTIBAÑEZ', 'MICHELLE OBREGON', 'ELIZABETH FUENTES', ' ENRIQUEZ', 'ALEXANDRA CARRERA', 'CAROLINA SILVERA', 'CLEER LOPEZ', 'INES LUQUE', 'RICARDO ALVA', 'ENRIQUE LAZO', 'SERGIO FABIAN', 'STUWARD AGUILAR', 'KAREM RIVERA', 'DEL MELENDEZ', 'YOEL YARIHUAMAN', 'ELIZABETH DIAZ', 'FRANCO ARANIBAR', 'ELISON SAJAMI', 'MAVEL OSORIO', 'ZENOVIA ESPINOZA', 'JORDAN AZPUR', ' ROSALES', ' FIGARI', ' CASTRO', 'GUILLERMO']
+usernames = ['GAMARRA60', 'GONZALES61', 'CORONADO62', 'HUINCHO63', 'SOLARTE64', 'ZAPATA65', 'ROJAS66', 'CALATAYUD67', 'SEBASTIANI68', 'NOVOA69', 'CHAVEZ70', 'CARRION71', 'CHURATA72', 'TORREJON73', 'SILVA74', 'NAYAP75', 'USCUVILCA76', 'BERNAOLA77', 'ALMONACID78', 'JULCARIMA79', 'HUAIRE80', 'OTINIANO81', 'ROJAS82', 'FLORES83', 'NAPAN84', 'SOBERON85', 'PONCE86', 'SANTIBAÑEZ87', 'OBREGON88', 'FUENTES89', 'ENRIQUEZ90', 'CARRERA91', 'SILVERA92', 'LOPEZ93', 'LUQUE94', 'ALVA95', 'LAZO96', 'FABIAN97', 'AGUILAR98', 'RIVERA99', 'MELENDEZ100', 'YARIHUAMAN101', 'DIAZ102', 'ARANIBAR103', 'SAJAMI104', 'OSORIO105', 'ESPINOZA106', 'AZPUR107', 'ROSALES108', 'FIGARI109', 'CASTRO110', 'GUILLERMOAPP']
 
 # load hashed passwords
 file_path = Path(__file__).parent / "hashed_pw.pkl"
@@ -250,7 +250,7 @@ if authentication_status:
 
     if selected == "Contact":
 
-        xs = ['Cardenas', 'Genesis', 'LLLERENAL', 'BERNEDO', 'CERVERA', 'CHUNGA', 'VIERA', 'RAYMUNDO', 'CABANILLAS', 'RIMARACHIN', 'BENAVIDES', 'YEREN', 'BELLIDO', 'ANDREA', 'SANTA ANA', 'POMA REYES', 'ECHEVARRIA', 'MORI', 'PAULINO', 'SALCEDO', 'MAYORCA', 'PRUDENCIO', 'HUAMANCHUMO', 'Argomedo', 'Hinostroza', 'Bot', 'YERSON', 'Roberto']
+        xs = usernames = ['GAMARRA60', 'GONZALES61', 'CORONADO62', 'HUINCHO63', 'SOLARTE64', 'ZAPATA65', 'ROJAS66', 'CALATAYUD67', 'SEBASTIANI68', 'NOVOA69', 'CHAVEZ70', 'CARRION71', 'CHURATA72', 'TORREJON73', 'SILVA74', 'NAYAP75', 'USCUVILCA76', 'BERNAOLA77', 'ALMONACID78', 'JULCARIMA79', 'HUAIRE80', 'OTINIANO81', 'ROJAS82', 'FLORES83', 'NAPAN84', 'SOBERON85', 'PONCE86', 'SANTIBAÑEZ87', 'OBREGON88', 'FUENTES89', 'ENRIQUEZ90', 'CARRERA91', 'SILVERA92', 'LOPEZ93', 'LUQUE94', 'ALVA95', 'LAZO96', 'FABIAN97', 'AGUILAR98', 'RIVERA99', 'MELENDEZ100', 'YARIHUAMAN101', 'DIAZ102', 'ARANIBAR103', 'SAJAMI104', 'OSORIO105', 'ESPINOZA106', 'AZPUR107', 'ROSALES108', 'FIGARI109', 'CASTRO110']
         #xs = ['Cardenas', 'LLLERENAL', 'Hinostroza', 'Argomedo', 'VIERA']
         bs = (username in xs)
 
@@ -713,7 +713,230 @@ if authentication_status:
                                         'Hola, te contactamos para indicarte que hemos generado el ticket de avería ticket. Nos pondremos en contacto en las próximas horas, Movistar']
                         st.dataframe(df)
 
+    if selected == "Report":
 
+        xs = usernames = ['GUILLERMOAPP']
+        #xs = ['Cardenas', 'LLLERENAL', 'Hinostroza', 'Argomedo', 'VIERA']
+        bs = (username in xs)
+
+        if bs == True:
+            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>sistematizar procesos de data GESTION</b></p>', unsafe_allow_html=True)
+
+            st.sidebar.subheader("Cargar datos de acuerdo a lo requerido")
+
+                    # Setup file upload
+            uploaded_file = st.sidebar.file_uploader(
+                                    label="Solo cargar data TT y CMR. (200MB max)",
+                                    type=['csv', 'xlsx', 'XLS'])
+
+            #global df
+            if uploaded_file is not None:
+                #print(uploaded_file)
+                #print("hello")
+
+                with st.spinner('Procesando los datos...'):
+
+                    try:
+                        #df = pd.read_excel('dic_20_Copia de PasaParametros.xlsx', sheet_name = 'Para Liquidar', skiprows = 15, usecols = 'B').iloc[:-1]
+                        df = pd.read_excel(uploaded_file)
+                        #https://es.stackoverflow.com/questions/350681/como-extraer-tablas-de-un-excel-para-cruzar-con-otra-base-de-excel-en-python
+                        #df = pd.read_excel('CARGARGILLERMO.xlsx')
+                        columdf = len(df.columns)
+                        print(columdf)
+
+                        if columdf == 2:
+
+                            df = pd.read_excel(uploaded_file, sheet_name = 'Reporte_Gian', skiprows = 13, usecols = 'D').iloc[:-1]
+
+                            now = datetime.today().strftime('%Y-%m-%d')
+
+                            df['fecha'] = np.nan
+                            df['fecha'] = df['fecha'].fillna(now)
+
+                            df.columns = ['codliq', 'fecha']
+
+                            #print(df)
+
+                            df = df.fillna('')
+                            df["codliq"]=df["codliq"].astype(str)
+
+                            gc = gspread.service_account(filename='datacargar-947843f340e2.json')
+                            sh = gc.open("guille_app")
+
+                            #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
+                            worksheet = sh.get_worksheet(0)
+
+                            df1 = pd.DataFrame(worksheet.get_all_records())
+
+
+                            df1["codliq"]=df1["codliq"].astype(str)
+                            #######
+                            ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
+                            #######
+                            union = pd.concat([df, df1])
+                            #print(len(union))
+                            union = union.drop_duplicates(subset=['codliq'])
+
+                            union = union.sort_values(by='fecha')
+                            #borrar datos total y dejar encabezado
+                            worksheet.resize(rows=1)
+                            worksheet.resize(rows=30)
+                            #cargar datos df
+                            worksheet.update([union.columns.values.tolist()] + union.values.tolist())
+
+                            st.success('cargo con exito data tablas dinamica')
+
+
+                        if columdf == 50:
+                            df = pd.read_excel(uploaded_file, usecols = 'A:AU')
+                            df = df.dropna(subset=["CODREQ"])
+                            df = df.fillna('')
+                            #print(df)
+
+                            gc = gspread.service_account(filename='datacargar-947843f340e2.json')
+                            sh = gc.open("guille_app")
+
+                            #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
+                            worksheet = sh.get_worksheet(4)
+
+                            #borrar datos total y dejar encabezado
+                            worksheet.resize(rows=1)
+                            worksheet.resize(rows=30)
+                            #cargar datos df
+                            worksheet.update([df.columns.values.tolist()] + df.values.tolist())
+
+                            st.success('cargo con exito data DOW')
+
+                        if columdf == 172:
+
+                            Trouble = pd.read_excel(uploaded_file, engine="openpyxl", skiprows=3)
+                            ######3######################
+                            Troubledt=Trouble[["Incident Number",	"CONTRATA_TOA__c",	"Categorization Tier 3", "CUSTOMERID_CRM__c", "OBSERVATIONS_CRM__c", "TELEFONO_REFERENCIA_1_CRM","servicioAfectado"]]
+                            Troubledt = Troubledt.fillna('')
+
+                            gc = gspread.service_account(filename='datacargar-947843f340e2.json')
+                            sh = gc.open("guille_app")
+
+                            #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
+                            worksheet = sh.get_worksheet(1)
+
+                            #borrar datos total y dejar encabezado
+                            worksheet.resize(rows=1)
+                            worksheet.resize(rows=30)
+                            #cargar datos df
+                            worksheet.update([Troubledt.columns.values.tolist()] + Troubledt.values.tolist())
+                            df = pd.DataFrame(worksheet.get_all_records())
+
+                            st.success('cargo con exito data TT')
+
+                        if columdf == 238:
+                            gc = gspread.service_account(filename='datacargar-947843f340e2.json')
+                            sh = gc.open("guille_app")
+
+                            #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
+                            worksheet = sh.get_worksheet(2)
+
+                            #borrar datos total y dejar encabezado
+                            #worksheet.resize(rows=1)
+                            #worksheet.resize(rows=30)
+                            ##cargar datos df
+                            #worksheet.update([df1.columns.values.tolist()] + df1.values.tolist())
+                            df1 = pd.DataFrame(worksheet.get_all_records())
+                            #print(df1)
+
+
+                            df2 = pd.read_excel(uploaded_file, engine="openpyxl")
+                            ######3######################
+                            df2 = df2[["CUSTOMERID_CRM__c"]]
+
+                            df2['ESTADO'] = '1'
+
+
+
+                            df1["CUSTOMERID_CRM__c"]=df1["CUSTOMERID_CRM__c"].astype(str)
+                            df2["CUSTOMERID_CRM__c"]=df2["CUSTOMERID_CRM__c"].astype(str)
+                            #######
+                            ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
+                            #######
+                            union = pd.concat([df1, df2])
+
+                            union['CUSTOMERID_CRM__c'] = pd.to_numeric(union['CUSTOMERID_CRM__c'], errors='coerce').fillna(0).astype(int)
+                            #print(len(union))
+                            union = union.drop_duplicates(subset=['CUSTOMERID_CRM__c'])
+
+                            alx = union.astype({'CUSTOMERID_CRM__c': 'str'})
+                            union = alx[alx['CUSTOMERID_CRM__c'].str.len() > 1 ]
+
+                            worksheet = sh.get_worksheet(2)
+
+                            #borrar datos total y dejar encabezado
+                            worksheet.resize(rows=1)
+                            worksheet.resize(rows=30)
+                            #cargar datos df
+                            worksheet.update([union.columns.values.tolist()] + union.values.tolist())
+
+                            st.success('cargo con exito data Colas_Pais_New')
+
+                        if columdf == 71:
+
+                            gc = gspread.service_account(filename='datacargar-947843f340e2.json')
+                            sh = gc.open("guille_app")
+
+                            #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
+                            worksheet = sh.get_worksheet(3)
+
+                            #borrar datos total y dejar encabezado
+                            #worksheet.resize(rows=1)
+                            #worksheet.resize(rows=30)
+                            ##cargar datos df
+                            #worksheet.update([df1.columns.values.tolist()] + df1.values.tolist())
+                            df1 = pd.DataFrame(worksheet.get_all_records())
+                            print(df1)
+
+
+                            df2 = pd.read_excel(uploaded_file, sheet_name = 'Hoja1')
+                            ######3######################
+                            df2=df2[["customernumber"]]
+                            df2 = df2.dropna()
+                            df2["customernumber"]=df2["customernumber"].astype(int)
+                            now = datetime.today().strftime('%Y-%m-%d')
+
+                            df2['fecha'] = np.nan
+                            df2['fecha'] = df2['fecha'].fillna(now)
+
+
+
+                            df1["customernumber"]=df1["customernumber"].astype(str)
+                            df2["customernumber"]=df2["customernumber"].astype(str)
+                            #######
+                            ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
+                            #######
+                            union = pd.concat([df1, df2])
+                            #print(len(union))
+                            union = union.drop_duplicates(subset=['customernumber'])
+
+
+                            alx = union.astype({'customernumber': 'str'})
+
+                            union = alx[alx['customernumber'].str.len() > 1 ]
+
+
+                            worksheet = sh.get_worksheet(3)
+
+                            #borrar datos total y dejar encabezado
+                            worksheet.resize(rows=1)
+                            worksheet.resize(rows=30)
+                            #cargar datos df
+                            worksheet.update([union.columns.values.tolist()] + union.values.tolist())
+
+                            st.success('cargo con exito data preferentes_toa')
+
+                        #else:
+                        #    st.error('DATA NO CORRESPONDE LOS PARAMETROS👋🏻')
+
+
+                    except Exception as e:
+                        st.error('DATA NO CORRESPONDE 👋🏻')
 
     ## fondo total
     def add_bg_from_url():
