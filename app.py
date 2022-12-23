@@ -1,7 +1,8 @@
 import streamlit as st
 import pickle
 from pathlib import Path
-
+import pandas as pd
+import numpy as np
 #from soupsieve import select  # pip install pandas openpyxl
 import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 ############################################ OCULTAR INFROMACION NO IMPORTANTE
@@ -12,6 +13,10 @@ import warnings
 warnings.filterwarnings('ignore')
 #########################################3333
 ##########################
+from datetime import datetime
+import gspread
+#import pyautogui
+
 st.set_page_config(page_title='bdtickets-Averias', page_icon="🌀", layout='centered', initial_sidebar_state='auto')
 
 ## borrar nombres de la pagina
@@ -187,4 +192,8 @@ if authentication_status:
     authenticator.logout("Logout", "sidebar")
     st.sidebar.title(f"Bienvenid@ {name}")
     #### fondo al costado
+
+    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>CARGA TUS DATOS</b></p>', unsafe_allow_html=True)
+
+    st.sidebar.subheader("Cargar datos de acuerdo a lo requerido")
 
