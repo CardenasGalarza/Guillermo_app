@@ -193,7 +193,3 @@ if authentication_status:
     st.sidebar.title(f"Bienvenid@ {name}")
     #### fondo al costado
 
-    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>CARGA TUS DATOS</b></p>', unsafe_allow_html=True)
-
-    st.sidebar.subheader("Cargar datos de acuerdo a lo requerido")
-
