@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 from pathlib import Path
-import pandas as pd
-import numpy as np
+
 #from soupsieve import select  # pip install pandas openpyxl
 import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 ############################################ OCULTAR INFROMACION NO IMPORTANTE
@@ -13,10 +12,6 @@ import warnings
 warnings.filterwarnings('ignore')
 #########################################3333
 ##########################
-from datetime import datetime
-import gspread
-#import pyautogui
-
 st.set_page_config(page_title='bdtickets-Averias', page_icon="🌀", layout='centered', initial_sidebar_state='auto')
 
 ## borrar nombres de la pagina
