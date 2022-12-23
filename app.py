@@ -404,8 +404,8 @@ if authentication_status:
 
                     st.success('cargo con exito data preferentes_toa')
 
-                else:
-                    st.error('DATA NO CORRESPONDE LOS PARAMETROS👋🏻')
+                #else:
+                #    st.error('DATA NO CORRESPONDE LOS PARAMETROS👋🏻')
 
 
             except Exception as e:
