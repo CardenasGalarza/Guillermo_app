@@ -195,221 +195,491 @@ if authentication_status:
 
     st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>CARGA TUS DATOS</b></p>', unsafe_allow_html=True)
 
-    st.sidebar.subheader("Cargar datos de acuerdo a lo requerido")
+    xs = ['Cardenas', 'Genesis', 'LLLERENAL', 'BERNEDO', 'CERVERA', 'CHUNGA', 'VIERA', 'RAYMUNDO', 'CABANILLAS', 'RIMARACHIN', 'BENAVIDES', 'YEREN', 'BELLIDO', 'ANDREA', 'SANTA ANA', 'POMA REYES', 'ECHEVARRIA', 'MORI', 'PAULINO', 'SALCEDO', 'MAYORCA', 'PRUDENCIO', 'HUAMANCHUMO', 'Argomedo', 'Hinostroza', 'Bot', 'YERSON', 'Roberto']
+    #xs = ['Cardenas', 'LLLERENAL', 'Hinostroza', 'Argomedo', 'VIERA']
+    bs = (username in xs)
+
+    if bs == True:
+
+        #st.title(f"You have selected {selected}")
+        #st.title(f"Hola {name} estamos en proceso de esta opcion...😮‍💨👨🏻‍💻")
+
+        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,white, white);color:navy;font-size:24px;border-radius:2%;"><b>ENVIAR MENSAJE GESTION</b></p>', unsafe_allow_html=True)
+
+
+        with st.form(key='my_form', clear_on_submit=True):
+
+                import streamlit as st
+                import streamlit as st
+                from streamlit_option_menu import option_menu
+                import pickle
+                from pathlib import Path
+                import pandas as pd
+                import numpy as np
+                #from soupsieve import select  # pip install pandas openpyxl
+                import streamlit_authenticator as stauth  # pip install streamlit-authenticator
+                ############################################ OCULTAR INFROMACION NO IMPORTANTE
+                import base64
+                import mysql.connector
+                from mysql.connector import Error
+                #import pyodbc
+                import streamlit as st
+                ############################################ OCULTAR INFROMACION NO IMPORTANTE
+                import warnings
+                warnings.filterwarnings('ignore')
+                #########################################3333
+                ##########################
+                import time
+                from datetime import datetime
+                from datetime import timedelta
+                import gspread
+                import re
+
+
+                col1, col2, col3 = st.columns(3)
+
+                with col1:
+                    tick = st.text_input('Tickets')
+                with col2:
+                    celu = st.text_input('Numero')
+
+                    
+
+                mensaje = st.selectbox(
+                    "Mensaje",
+                    (
+                    'Cliente no contesta volver a llamar',
+                    'Se liquida sin contacto (parámetro ok)',
+                    'Cierra el caso con motivo: Cobertura WiFi',
+                    'Cierra el caso con motivo: Configurac WiFi pss y ssid',
+                    'Servicio operativo (parámetros OK)',
+                    'Cierra caso y genera avería',
+
+                    ),
+                    key="filter_type8",
+                    help="""
+                    Ten encuenta tu accion `Ticket` inf.
+                    """,
+                )
+
+
+                #TODO SIVERVPARA BARRA AZUL
+                #celu = '925266696'
+                #print(celu)
+
+                st.balloons()
+            # Every form must have a submit button.
+                submitted = st.form_submit_button("✉️Enviar")
+
+                if submitted == True:
+
+                    with st.spinner('Enviado mensaje...'):
+
+                        date = datetime.now()
+                        tiempo = (date.strftime("%d-%m-%Y %H:%M:%S"))
+
+                        cnxn = mysql.connector.connect( host="us-cdbr-east-06.cleardb.net",
+                                                        port="3306",
+                                                        user="be690637bd68c4",
+                                                        passwd="88b2781e",
+                                                        db="heroku_4843d4a20ed7194"
+                                                        )
+                        cursor = cnxn.cursor()
+
+                        #cursor.execute("UPDATE bdtickets SET ESTADO = ?, GESTOR = ? WHERE codreq = ?", add, nom, adwe)
+                        sql = """
+                        SELECT codreq, CUSTOMERID_CRM__c, servicioAfectado, MENSAJE FROM bdtickets WHERE codreq = %s ;
+                        """
+                        ##TODO SIEMPRE PONER LA COMA
+                        cursor.execute(sql, (tick,))
+                        # fetch result
+                        record = cursor.fetchall()
+                        #print(record)
+                        #cursor.close()
+                        #cnxn.close()
+
+                        gian = pd.DataFrame(record)
+                        gian.columns = ['codreq', 'CUSTOMERID_CRM__c', 'servicioAfectado', 'MENSAJE']
+                        #for row in record:
+                        #    print("GESTOR = ", row[0], )
+                        #    print("codreq = ", row[1])
+                        #    print("FEC_CERRAR = ", row[2])
+                        #dfg = gian[gian['GESTOR'] == 'Giancarlos Cardenas']
 
-            # Setup file upload
-    uploaded_file = st.sidebar.file_uploader(
-                            label="Solo cargar data TT y CMR. (200MB max)",
-                            type=['csv', 'xlsx', 'XLS'])
+                        tick =gian["codreq"]
+                        tick = (tick.to_string(index=False))
 
-    global df
-    if uploaded_file is not None:
-        #print(uploaded_file)
-        #print("hello")
+                        servi =gian["servicioAfectado"]
+                        servi = (servi.to_string(index=False))
 
-        with st.spinner('Procesando los datos...'):
+                        codcli =gian["CUSTOMERID_CRM__c"]
+                        codcli = (codcli.to_string(index=False))
 
-            try:
-                #df = pd.read_excel('dic_20_Copia de PasaParametros.xlsx', sheet_name = 'Para Liquidar', skiprows = 15, usecols = 'B').iloc[:-1]
-                df = pd.read_excel(uploaded_file)
-                #https://es.stackoverflow.com/questions/350681/como-extraer-tablas-de-un-excel-para-cruzar-con-otra-base-de-excel-en-python
-                #df = pd.read_excel('CARGARGILLERMO.xlsx')
-                columdf = len(df.columns)
-                print(columdf)
+                        numllamada = (gian['MENSAJE'].unique())
+                        numllamada = (str(numllamada)[2:-2])
+                        #print(numllamada)
+                        sumu = int(numllamada) + 1
 
-                if columdf == 2:
 
-                    df = pd.read_excel(uploaded_file, sheet_name = 'Reporte_Gian', skiprows = 13, usecols = 'D').iloc[:-1]
+                        sql = "INSERT INTO bdmensaje (codreq, FECHA_ENV, SMS) VALUES (%s, %s, %s)"
+                        val = (tick, tiempo, mensaje)
+                        cursor.execute(sql, val)
+                        #cnxn.commit()
+                        sql1 = "UPDATE bdtickets SET MENSAJE = %s WHERE codreq = %s"
+                        #sql1 = "INSERT INTO gestionacc (codreq, ACCION) VALUES (%s, %s)"
+                        val1 = (sumu, tick)
+                        cursor.execute(sql1, val1)
 
-                    now = datetime.today().strftime('%Y-%m-%d')
+                        cnxn.commit()
+                        cursor.close()
+                        cnxn.close()
+                        #print(dfunom)
 
-                    df['fecha'] = np.nan
-                    df['fecha'] = df['fecha'].fillna(now)
+                        import streamlit as st
+                        import glob
+                        import os
+                        import time
 
-                    df.columns = ['codliq', 'fecha']
+                        import streamlit as st
+                        from selenium import webdriver
+                        from selenium.webdriver.chrome.options import Options
+                        from selenium.webdriver.support.wait import WebDriverWait
+                        from selenium.webdriver.common.by import By
 
-                    #print(df)
+                        options = Options()
+                        options.add_argument("--headless")
+                        options.add_argument("--no-sandbox")
+                        options.add_argument("--disable-dev-shm-usage")
+                        options.add_argument("--disable-gpu")
+                        options.add_argument("--disable-features=NetworkService")
+                        options.add_argument("--window-size=1920x1080")
+                        options.add_argument("--disable-features=VizDisplayCompositor")
 
-                    df = df.fillna('')
-                    df["codliq"]=df["codliq"].astype(str)
+                        
 
-                    gc = gspread.service_account(filename='datacargar-947843f340e2.json')
-                    sh = gc.open("guille_app")
+                        #def delete_selenium_log():
+                        #    if os.path.exists('selenium.log'):
+                        #        os.remove('selenium.log')
 
-                    #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
-                    worksheet = sh.get_worksheet(0)
 
-                    df1 = pd.DataFrame(worksheet.get_all_records())
+                        #def show_selenium_log():
+                        #    if os.path.exists('selenium.log'):
+                        #        with open('selenium.log') as f:
+                        #            content = f.read()
+                        #            st.code(content)
 
 
-                    df1["codliq"]=df1["codliq"].astype(str)
-                    #######
-                    ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
-                    #######
-                    union = pd.concat([df, df1])
-                    #print(len(union))
-                    union = union.drop_duplicates(subset=['codliq'])
+                        # not required anymore:
+                        # def get_chromedriver_path():
+                        #     results = glob.glob('/**/chromedriver', recursive=True)  # workaround on streamlit sharing
+                        #     return results[0]
+                        #st.button("Inicio")
 
-                    union = union.sort_values(by='fecha')
-                    #borrar datos total y dejar encabezado
-                    worksheet.resize(rows=1)
-                    worksheet.resize(rows=30)
-                    #cargar datos df
-                    worksheet.update([union.columns.values.tolist()] + union.values.tolist())
+                        st.balloons()
 
-                    st.success('cargo con exito data tablas dinamica')
+                        
 
+                        driver = webdriver.Chrome(options=options, service_log_path='selenium.log')
 
-                if columdf == 50:
-                    df = pd.read_excel(uploaded_file, usecols = 'A:AU')
-                    df = df.dropna(subset=["CODREQ"])
-                    df = df.fillna('')
-                    #print(df)
+                        username = 'caramburu_TDP'
+                        passwordd = 'WebSys29*T*'
+                        driver.get("https://auth.movistaradvertising.com/login?logout")
+                        time.sleep(1)
 
-                    gc = gspread.service_account(filename='datacargar-947843f340e2.json')
-                    sh = gc.open("guille_app")
+                        #pyautogui.hotkey("ctrl","F5")
 
-                    #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
-                    worksheet = sh.get_worksheet(4)
+                        
 
-                    #borrar datos total y dejar encabezado
-                    worksheet.resize(rows=1)
-                    worksheet.resize(rows=30)
-                    #cargar datos df
-                    worksheet.update([df.columns.values.tolist()] + df.values.tolist())
+                        xpath = driver.find_element("xpath", '//INPUT[@id="username"]')
+                        xpath.send_keys(username)
+                        time.sleep(2)
 
-                    st.success('cargo con exito data DOW')
+                        xpath = driver.find_element("xpath", '//INPUT[@id="password"]')
+                        xpath.send_keys(passwordd)
+                        time.sleep(2)
 
-                if columdf == 172:
 
-                    Trouble = pd.read_excel(uploaded_file, engine="openpyxl", skiprows=3)
-                    ######3######################
-                    Troubledt=Trouble[["Incident Number",	"CONTRATA_TOA__c",	"Categorization Tier 3", "CUSTOMERID_CRM__c", "OBSERVATIONS_CRM__c", "TELEFONO_REFERENCIA_1_CRM","servicioAfectado"]]
-                    Troubledt = Troubledt.fillna('')
+                        xpath = driver.find_element("xpath", '//BUTTON[@type="submit"][text()="Ingresar"]')
+                        xpath.click()
+                        time.sleep(4)
 
-                    gc = gspread.service_account(filename='datacargar-947843f340e2.json')
-                    sh = gc.open("guille_app")
 
-                    #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
-                    worksheet = sh.get_worksheet(1)
+                        xpath = driver.find_element("xpath", '//*[@id="dropdown-user-menu"]/div/button[2]')
+                        xpath.click()
+                        time.sleep(6)
 
-                    #borrar datos total y dejar encabezado
-                    worksheet.resize(rows=1)
-                    worksheet.resize(rows=30)
-                    #cargar datos df
-                    worksheet.update([Troubledt.columns.values.tolist()] + Troubledt.values.tolist())
-                    df = pd.DataFrame(worksheet.get_all_records())
+                        xpath = driver.find_element("xpath", '//SPAN[@_ngcontent-c1=""][text()="SMSi"]')
+                        xpath.click()
+                        time.sleep(4)
 
-                    st.success('cargo con exito data TT')
+                        #celu = '925266696'
+                        #mensaje = 'Listoooossdddssss'
 
-                if columdf == 238:
-                    gc = gspread.service_account(filename='datacargar-947843f340e2.json')
-                    sh = gc.open("guille_app")
+                        xpath = driver.find_element("xpath", '//INPUT[@id="inputGsmList"]')
+                        xpath.send_keys(celu)
+                        time.sleep(6)
 
-                    #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
-                    worksheet = sh.get_worksheet(2)
+                        if 'Cliente no contesta volver a llamar' == mensaje:
 
-                    #borrar datos total y dejar encabezado
-                    #worksheet.resize(rows=1)
-                    #worksheet.resize(rows=30)
-                    ##cargar datos df
-                    #worksheet.update([df1.columns.values.tolist()] + df1.values.tolist())
-                    df1 = pd.DataFrame(worksheet.get_all_records())
-                    #print(df1)
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, intentamos contactarte para solucionar la avería en tu {servi} {codcli}, estaremos contactandote nuevamente, Movistar.")
+                            time.sleep(6)
 
 
-                    df2 = pd.read_excel(uploaded_file, engine="openpyxl")
-                    ######3######################
-                    df2 = df2[["CUSTOMERID_CRM__c"]]
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
 
-                    df2['ESTADO'] = '1'
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
 
+                            driver.quit()
 
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
 
-                    df1["CUSTOMERID_CRM__c"]=df1["CUSTOMERID_CRM__c"].astype(str)
-                    df2["CUSTOMERID_CRM__c"]=df2["CUSTOMERID_CRM__c"].astype(str)
-                    #######
-                    ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
-                    #######
-                    union = pd.concat([df1, df2])
+                            col1, col2, col3 = st.columns(3)
 
-                    union['CUSTOMERID_CRM__c'] = pd.to_numeric(union['CUSTOMERID_CRM__c'], errors='coerce').fillna(0).astype(int)
-                    #print(len(union))
-                    union = union.drop_duplicates(subset=['CUSTOMERID_CRM__c'])
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
 
-                    alx = union.astype({'CUSTOMERID_CRM__c': 'str'})
-                    union = alx[alx['CUSTOMERID_CRM__c'].str.len() > 1 ]
+                        
 
-                    worksheet = sh.get_worksheet(2)
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
 
-                    #borrar datos total y dejar encabezado
-                    worksheet.resize(rows=1)
-                    worksheet.resize(rows=30)
-                    #cargar datos df
-                    worksheet.update([union.columns.values.tolist()] + union.values.tolist())
+                        
 
-                    st.success('cargo con exito data Colas_Pais_New')
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
 
-                if columdf == 71:
+                        
+                        if 'Se liquida sin contacto (parámetro ok)' == mensaje:
 
-                    gc = gspread.service_account(filename='datacargar-947843f340e2.json')
-                    sh = gc.open("guille_app")
 
-                    #  el 0 simbol del numero de hoja en este caso es la primera hoja = 0
-                    worksheet = sh.get_worksheet(3)
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, intentamos contactarte para validar que tu {servi} {codcli} , ya se encuentra operativo, por favor realizar las validaciones, Movistar")
+                            time.sleep(6)
 
-                    #borrar datos total y dejar encabezado
-                    #worksheet.resize(rows=1)
-                    #worksheet.resize(rows=30)
-                    ##cargar datos df
-                    #worksheet.update([df1.columns.values.tolist()] + df1.values.tolist())
-                    df1 = pd.DataFrame(worksheet.get_all_records())
-                    print(df1)
 
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
 
-                    df2 = pd.read_excel(uploaded_file, sheet_name = 'Hoja1')
-                    ######3######################
-                    df2=df2[["customernumber"]]
-                    df2 = df2.dropna()
-                    df2["customernumber"]=df2["customernumber"].astype(int)
-                    now = datetime.today().strftime('%Y-%m-%d')
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
 
-                    df2['fecha'] = np.nan
-                    df2['fecha'] = df2['fecha'].fillna(now)
+                            driver.quit()
 
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
 
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
+                            col1, col2, col3 = st.columns(3)
 
-                    df1["customernumber"]=df1["customernumber"].astype(str)
-                    df2["customernumber"]=df2["customernumber"].astype(str)
-                    #######
-                    ## TODO UNIR BASE DE DATOS MYSQL Y GOOGLE
-                    #######
-                    union = pd.concat([df1, df2])
-                    #print(len(union))
-                    union = union.drop_duplicates(subset=['customernumber'])
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
 
+                        
 
-                    alx = union.astype({'customernumber': 'str'})
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
 
-                    union = alx[alx['customernumber'].str.len() > 1 ]
+                        
 
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
 
-                    worksheet = sh.get_worksheet(3)
+                        if 'Cierra el caso con motivo: Cobertura WiFi' == mensaje:
 
-                    #borrar datos total y dejar encabezado
-                    worksheet.resize(rows=1)
-                    worksheet.resize(rows=30)
-                    #cargar datos df
-                    worksheet.update([union.columns.values.tolist()] + union.values.tolist())
 
-                    st.success('cargo con exito data preferentes_toa')
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, detectamos que la intermitencia del servicio {codcli} se debe al alcance Wifi, recomendamos comprar un repetidor. Más info al 080011800, Movistar.")
+                            time.sleep(6)
 
-                #else:
-                #    st.error('DATA NO CORRESPONDE LOS PARAMETROS👋🏻')
 
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
 
-            except Exception as e:
-                st.error('DATA NO CORRESPONDE 👋🏻')
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
+
+                            driver.quit()
+
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
+                            col1, col2, col3 = st.columns(3)
+
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                        if 'Cierra el caso con motivo: Configurac WiFi pss y ssid' == mensaje:
+
+
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, se realizó la configuración de tu red WiFi del servicio {codcli}. Sigue pssy ssid disfrutando de tu navegación, Movistar.")
+                            time.sleep(6)
+
+
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
+
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
+
+                            driver.quit()
+
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
+                            col1, col2, col3 = st.columns(3)
+
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                        if 'Servicio operativo (parámetros OK)' == mensaje:
+
+
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu servicio de {servi} con código de servicio {codcli} se encuentra operativo. Disfruta de tu navegación, Movistar.")
+                            time.sleep(6)
+
+
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
+
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
+
+                            driver.quit()
+
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
+                            col1, col2, col3 = st.columns(3)
+
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                        if 'Cierra caso y genera avería' == mensaje:
+
+
+                            xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                            xpath.send_keys(f"Hola, te contactamos para indicarte que hemos generado el ticket de avería ticket. Nos pondremos en contacto en las próximas horas, Movistar")
+                            time.sleep(6)
+
+
+                            xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                            xpath.click()
+                            time.sleep(6)
+
+                            xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                            xpath.click()
+                            time.sleep(5)
+
+                            driver.quit()
+
+                            st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                            #st.success('Mensaje enviado')
+                            st.balloons()
+                            #st.experimental_rerun()
+                            col1, col2, col3 = st.columns(3)
+
+                            with col1:
+                                st.markdown("**Numero de tickets**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col2:
+                                st.markdown("**Numero de codcli**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                        
+
+                            with col3:
+                                st.markdown("**Servi**")
+                                st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                df = pd.DataFrame()
+                df['CASO'] = ['Cliente no contesta volver a llamar',
+                                    'Se liquida sin contacto (parámetro ok)',
+                                    'Cierra el caso con motivo: Cobertura WiFi',
+                                    'Cierra el caso con motivo: Configurac WiFi pss y ssid',
+                                    'Servicio operativo (parámetros OK)',
+                                    'Cierra caso y genera avería']
+                                    
+                df['SMS'] = ['Hola, intentamos contactarte para solucionar la avería en tu {servi} {codcli}, estaremos contactandote nuevamente, Movistar.',
+                                'Hola, intentamos contactarte para validar que tu {servi} {codcli} , ya se encuentra operativo, por favor realizar las validaciones, Movistar',
+                                'Hola, detectamos que la intermitencia del servicio {codcli} se debe al alcance Wifi, recomendamos comprar un repetidor. Mas info al 080011800, Movistar.',
+                                'Hola, se realizó la configuración de tu red WiFi del servicio {codcli}. Sigue pssy ssid disfrutando de tu navegación, Movistar.',
+                                'Hola, nos alegra haberte ayudado, tu servicio de {servi} con código de servicio {codcli} se encuentra operativo. Disfruta de tu navegación, Movistar.',
+                                'Hola, te contactamos para indicarte que hemos generado el ticket de avería ticket. Nos pondremos en contacto en las próximas horas, Movistar']
+                st.dataframe(df)
 
     ## fondo total
     def add_bg_from_url():
