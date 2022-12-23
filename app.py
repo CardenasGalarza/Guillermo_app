@@ -938,6 +938,12 @@ if authentication_status:
                     except Exception as e:
                         st.error('DATA NO CORRESPONDE 👋🏻')
 
+                    finally :
+                        # 5. 모든 데이터베이스 실행 명령을 전부 끝냈으면,
+                        #    커서와 커넥션을 모두 닫아준다.
+                        cursor.close()
+                        cnxn.close()
+
     ## fondo total
     def add_bg_from_url():
         st.markdown(
