@@ -300,8 +300,20 @@ if authentication_status:
                     with col3:
                         codcli = st.text_input('codigo de cliente')
                     with col4:
-                        servi = st.text_input('servicio')
-
+                        #servi = st.text_input('servicio')
+                        servi = st.selectbox(
+                            "servicio",
+                            (
+                            '',
+                            'cableTv',
+                            'telef fijo',
+                            'internet',
+                            ),
+                            key="filter_type89",
+                            help="""
+                            Ten encuenta tu accion `servicio` inf.
+                            """,
+                        )
 
                         
 
