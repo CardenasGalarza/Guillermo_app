@@ -889,7 +889,7 @@ if authentication_status:
 
                             st.success('cargo con exito data Colas_Pais_New')
 
-                        if columdf == 71:
+                        if columdf == 72:
 
                             gc = gspread.service_account(filename='datacargar-947843f340e2.json')
                             sh = gc.open("guille_app")
