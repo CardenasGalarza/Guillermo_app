@@ -320,12 +320,12 @@ if authentication_status:
                     mensaje = st.selectbox(
                         "Mensaje",
                         (
-                        'Cliente no contesta volver a llamar',
-                        'Se liquida sin contacto (parámetro ok)',
                         'Cierra el caso con motivo: Cobertura WiFi',
                         'Cierra el caso con motivo: Configurac WiFi pss y ssid',
                         'Servicio operativo (parámetros OK)',
+                        'Sin contacto (parámetros OK)',
                         'Cierra caso y genera avería',
+                        'Refuerzo educativo TODOS'
 
                         ),
                         key="filter_type8",
