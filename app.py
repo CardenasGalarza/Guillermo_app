@@ -294,14 +294,14 @@ if authentication_status:
                     col1, col2, col3, col4 = st.columns(4)
 
                     with col1:
-                        tick = st.text_input('Tickets')
+                        ticket = st.text_input('Ticket')
                     with col2:
-                        celu = st.text_input('Numero')
+                        celu = st.text_input('N° Cel')
                     with col3:
-                        codcli = st.text_input('codigo de cliente')
+                        suscriptortelefono = st.text_input('codigo de serv')
                     with col4:
                         #servi = st.text_input('servicio')
-                        servi = st.selectbox(
+                        motivo2desc = st.selectbox(
                             "servicio",
                             (
                             '',
@@ -459,93 +459,10 @@ if authentication_status:
                                 xpath.send_keys(celu)
                                 time.sleep(6)
 
-                                if 'Cliente no contesta volver a llamar' == mensaje:
-
-                                    xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, intentamos contactarte para solucionar la avería en tu {servi} {codcli}, estaremos contactandote nuevamente, Movistar.")
-                                    time.sleep(6)
-
-
-                                    xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
-                                    xpath.click()
-                                    time.sleep(6)
-
-                                    xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
-                                    xpath.click()
-                                    time.sleep(5)
-
-                                    driver.quit()
-
-                                    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
-                                    #st.success('Mensaje enviado')
-                                    st.balloons()
-                                    #st.experimental_rerun()
-
-                                    col1, col2, col3 = st.columns(3)
-
-                                    with col1:
-                                        st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
-
-                                
-
-                                    with col2:
-                                        st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
-
-                                
-
-                                    with col3:
-                                        st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
-
-                                
-                                if 'Se liquida sin contacto (parámetro ok)' == mensaje:
-
-
-                                    xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, intentamos contactarte para validar que tu {servi} {codcli} , ya se encuentra operativo, por favor realizar las validaciones, Movistar")
-                                    time.sleep(6)
-
-
-                                    xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
-                                    xpath.click()
-                                    time.sleep(6)
-
-                                    xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
-                                    xpath.click()
-                                    time.sleep(5)
-
-                                    driver.quit()
-
-                                    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
-
-                                    #st.success('Mensaje enviado')
-                                    st.balloons()
-                                    #st.experimental_rerun()
-                                    col1, col2, col3 = st.columns(3)
-
-                                    with col1:
-                                        st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
-
-                                
-
-                                    with col2:
-                                        st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
-
-                                
-
-                                    with col3:
-                                        st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
-
                                 if 'Cierra el caso con motivo: Cobertura WiFi' == mensaje:
 
-
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, detectamos que la intermitencia del servicio {codcli} se debe al alcance Wifi, recomendamos comprar un repetidor. Más info al 080011800, Movistar.")
+                                    xpath.send_keys(f"Hola, detectamos que la intermitencia del servicio {suscriptortelefono} se debe al alcance Wifi, recomendamos comprar un repetidor. Mas info al 080011800, Movistar.")
                                     time.sleep(6)
 
 
@@ -560,10 +477,10 @@ if authentication_status:
                                     driver.quit()
 
                                     st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
-
                                     #st.success('Mensaje enviado')
                                     st.balloons()
                                     #st.experimental_rerun()
+
                                     col1, col2, col3 = st.columns(3)
 
                                     with col1:
@@ -582,11 +499,12 @@ if authentication_status:
                                         st.markdown("**Servi**")
                                         st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
 
+                                
                                 if 'Cierra el caso con motivo: Configurac WiFi pss y ssid' == mensaje:
 
 
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, se realizó la configuración de tu red WiFi del servicio {codcli}. Sigue pssy ssid disfrutando de tu navegación, Movistar.")
+                                    xpath.send_keys(f"Hola, se realizó la configuración de tu red WiFi del servicio {suscriptortelefono}. Sigue disfrutando de tu navegación, Movistar.")
                                     time.sleep(6)
 
 
@@ -627,7 +545,48 @@ if authentication_status:
 
 
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu servicio de {servi} con código de servicio {codcli} se encuentra operativo. Disfruta de tu navegación, Movistar.")
+                                    xpath.send_keys(f"Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, por favor realizar las validaciones, Movistar.")
+                                    time.sleep(6)
+
+
+                                    xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                                    xpath.click()
+                                    time.sleep(6)
+
+                                    xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                                    xpath.click()
+                                    time.sleep(5)
+
+                                    driver.quit()
+
+                                    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                                    #st.success('Mensaje enviado')
+                                    st.balloons()
+                                    #st.experimental_rerun()
+                                    col1, col2, col3 = st.columns(3)
+
+                                    with col1:
+                                        st.markdown("**Numero de tickets**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                                
+
+                                    with col2:
+                                        st.markdown("**Numero de codcli**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                                
+
+                                    with col3:
+                                        st.markdown("**Servi**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                                if 'Sin contacto (parámetros OK)' == mensaje:
+
+
+                                    xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                                    xpath.send_keys(f"Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, intentaremos llamarte nuevamente, Movistar.")
                                     time.sleep(6)
 
 
@@ -668,7 +627,48 @@ if authentication_status:
 
 
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, te contactamos para indicarte que hemos generado el ticket de avería ticket. Nos pondremos en contacto en las próximas horas, Movistar")
+                                    xpath.send_keys(f"Hola, te contactamos por tu servicio de {motivo2desc}  {suscriptortelefono}, se generó la avería {ticket}, en las próximas horas un técnico te visitará, Movistar.")
+                                    time.sleep(6)
+
+
+                                    xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
+                                    xpath.click()
+                                    time.sleep(6)
+
+                                    xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
+                                    xpath.click()
+                                    time.sleep(5)
+
+                                    driver.quit()
+
+                                    st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,Cyan, Cyan);color:BLACK;font-size:16px;border-radius:2%;">Mensaje enviado</p>', unsafe_allow_html=True)
+
+                                    #st.success('Mensaje enviado')
+                                    st.balloons()
+                                    #st.experimental_rerun()
+                                    col1, col2, col3 = st.columns(3)
+
+                                    with col1:
+                                        st.markdown("**Numero de tickets**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+
+                                
+
+                                    with col2:
+                                        st.markdown("**Numero de codcli**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+
+                                
+
+                                    with col3:
+                                        st.markdown("**Servi**")
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+
+                                if 'Refuerzo educativo TODOS' == mensaje:
+
+
+                                    xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
+                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu {motivo2desc} (suscriptortelefono) se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.")
                                     time.sleep(6)
 
 
@@ -710,19 +710,21 @@ if authentication_status:
                             st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,#e30052, #e30052);color:white;font-size:18px;border-radius:2%;"><b>😡👀 TE FALTA INGRESAR LOS DATOS REQUERIDOS 👀😡</b></p>', unsafe_allow_html=True)
 
             df = pd.DataFrame()
-            df['CASO'] = ['Cliente no contesta volver a llamar',
-                                'Se liquida sin contacto (parámetro ok)',
-                                'Cierra el caso con motivo: Cobertura WiFi',
-                                'Cierra el caso con motivo: Configurac WiFi pss y ssid',
-                                'Servicio operativo (parámetros OK)',
-                                'Cierra caso y genera avería']
+            df['CASO'] = [ 
+                    'Cierra el caso con motivo: Cobertura WiFi',
+                    'Cierra el caso con motivo: Configurac WiFi pss y ssid',
+                    'Servicio operativo (parámetros OK)',
+                    'Sin contacto (parámetros OK)',
+                    'Cierra caso y genera avería',
+                    'Refuerzo educativo TODOS']
                                 
-            df['SMS'] = ['Hola, intentamos contactarte para solucionar la avería en tu {servi} {codcli}, estaremos contactandote nuevamente, Movistar.',
-                            'Hola, intentamos contactarte para validar que tu {servi} {codcli} , ya se encuentra operativo, por favor realizar las validaciones, Movistar',
-                            'Hola, detectamos que la intermitencia del servicio {codcli} se debe al alcance Wifi, recomendamos comprar un repetidor. Mas info al 080011800, Movistar.',
-                            'Hola, se realizó la configuración de tu red WiFi del servicio {codcli}. Sigue pssy ssid disfrutando de tu navegación, Movistar.',
-                            'Hola, nos alegra haberte ayudado, tu servicio de {servi} con código de servicio {codcli} se encuentra operativo. Disfruta de tu navegación, Movistar.',
-                            'Hola, te contactamos para indicarte que hemos generado el ticket de avería ticket. Nos pondremos en contacto en las próximas horas, Movistar']
+            df['SMS'] = [
+                    'Hola, detectamos que la intermitencia del servicio {suscriptortelefono} se debe al alcance Wifi, recomendamos comprar un repetidor. Mas info al 080011800, Movistar.',
+                    'Hola, se realizó la configuración de tu red WiFi del servicio {suscriptortelefono}. Sigue disfrutando de tu navegación, Movistar.',
+                    'Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, por favor realizar las validaciones, Movistar.',
+                    'Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, intentaremos llamarte nuevamente, Movistar.',
+                    'Hola, te contactamos por tu servicio de {motivo2desc}  {suscriptortelefono}, se generó la avería {ticket}, en las próximas horas un técnico te visitará, Movistar.',
+                    'Hola, nos alegra haberte ayudado, tu {motivo2desc} (suscriptortelefono) se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.']
             st.dataframe(df)
 
     if selected == "Report":
