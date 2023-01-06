@@ -320,6 +320,7 @@ if authentication_status:
                     mensaje = st.selectbox(
                         "Mensaje",
                         (
+                        '',
                         'Cierra el caso con motivo: Cobertura WiFi',
                         'Cierra el caso con motivo: Configurac WiFi pss y ssid',
                         'Servicio operativo (parámetros OK)',
@@ -668,7 +669,7 @@ if authentication_status:
 
 
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu {motivo2desc} {suscriptortelefono} se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.")
+                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu {motivo2desc} {suscriptortelefono} se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.")
                                     time.sleep(6)
 
 
