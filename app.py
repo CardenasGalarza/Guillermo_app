@@ -345,10 +345,10 @@ if authentication_status:
 
                     if submitted == True:
 
-                        dt1 = len(tick)
+                        dt1 = len(ticket)
                         dt2 = len(celu)
-                        dt3 = len(codcli)
-                        dt4 = len(servi)
+                        dt3 = len(suscriptortelefono)
+                        dt4 = len(motivo2desc)
 
                         if dt1 > 0 and dt2 == 9 and  dt3 > 0 and  dt4 > 0:
 
