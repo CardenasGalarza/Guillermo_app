@@ -366,7 +366,7 @@ if authentication_status:
                                 cursor = cnxn.cursor()
 
                                 sql = "INSERT INTO bdmensaje (codreq, FECHA_ENV, SMS, CEL_num) VALUES (%s, %s, %s, %s)"
-                                val = (tick, tiempo, mensaje, celu)
+                                val = (ticket, tiempo, mensaje, celu)
                                 cursor.execute(sql, val)
                                 #cnxn.commit()
 
