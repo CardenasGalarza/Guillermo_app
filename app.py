@@ -485,19 +485,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                                 
                                 if 'Cierra el caso con motivo: Configurac WiFi pss y ssid' == mensaje:
@@ -527,19 +527,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                                 if 'Servicio operativo (parámetros OK)' == mensaje:
 
@@ -568,19 +568,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                                 if 'Sin contacto (parámetros OK)' == mensaje:
 
@@ -609,19 +609,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                                 if 'Cierra caso y genera avería' == mensaje:
 
@@ -650,19 +650,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                                 if 'Refuerzo educativo TODOS' == mensaje:
 
@@ -691,19 +691,19 @@ if authentication_status:
 
                                     with col1:
                                         st.markdown("**Numero de tickets**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{tick}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{ticket}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col2:
                                         st.markdown("**Numero de codcli**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{codcli}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{suscriptortelefono}</p>', unsafe_allow_html=True)
 
                                 
 
                                     with col3:
                                         st.markdown("**Servi**")
-                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{servi}</p>', unsafe_allow_html=True)
+                                        st.markdown(f'<p class="big-font"; style="text-align:center;background-image: linear-gradient(to right,LAVENDER, LAVENDER);color:BLACK;font-size:18px;border-radius:2%;">{motivo2desc}</p>', unsafe_allow_html=True)
 
                         else:
                             #st.error('👀 TIENES QUE ESCRIBIR EN TODOS LOS INPUT👀 ')
