@@ -669,7 +669,7 @@ if authentication_status:
 
 
                                     xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
-                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu {motivo2desc} {suscriptortelefono} se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.")
+                                    xpath.send_keys(f"Hola, nos alegra haberte ayudado, tu {motivo2desc} {suscriptortelefono} se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.")
                                     time.sleep(6)
 
 
@@ -725,7 +725,7 @@ if authentication_status:
                     'Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, por favor realizar las validaciones, Movistar.',
                     'Hola, intentamos contactarte para validar que tu servicio de {motivo2desc} {suscriptortelefono} ya se encuentra operativo, intentaremos llamarte nuevamente, Movistar.',
                     'Hola, te contactamos por tu servicio de {motivo2desc}  {suscriptortelefono}, se generó la avería {ticket}, en las próximas horas un técnico te visitará, Movistar.',
-                    'Hola, nos alegra haberte ayudado, tu {motivo2desc} (suscriptortelefono) se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.']
+                    'Hola, nos alegra haberte ayudado, tu {motivo2desc} (suscriptortelefono) se encuentra operativo. Disfruta tu navegación con estos tips http://smvst.com/tipsInt, Movistar.']
             st.dataframe(df)
 
     if selected == "Report":
