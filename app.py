@@ -18,8 +18,7 @@ import gspread
 #import pyautogui
 from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title="", page_icon=":guardsman:", layout="wide")
-#st.set_page_config(page_title='bdtickets-Averias', page_icon="🌀", layout='centered', initial_sidebar_state='auto')
+st.set_page_config(page_title='bdtickets-Averias', page_icon="🌀", layout='centered', initial_sidebar_state='auto')
 
 ## borrar nombres de la pagina
 hide_streamlit_style = """
