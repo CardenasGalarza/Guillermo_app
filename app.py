@@ -204,7 +204,7 @@ if authentication_status:
             with st.sidebar:
                 selected = option_menu(
                     menu_title="Main Menu",  # required
-                    options=["Contact", "Report", "Datacob"],  # required
+                    options=["Contact", "Datacob", "Report"],  # required
                     icons=["house", "book", "envelope"],  # optional
                     menu_icon="cast",  # optional
                     default_index=0,  # optional
@@ -215,7 +215,7 @@ if authentication_status:
             # 2. horizontal menu w/o custom style
             selected = option_menu(
                 menu_title=None,  # required
-                options=["Contact", "Report", "Datacob"],  # required
+                options=["Contact", "Datacob", "Report"],  # required
                 icons=["house", "book", "envelope"],  # optional
                 menu_icon="cast",  # optional
                 default_index=0,  # optional
@@ -227,7 +227,7 @@ if authentication_status:
             # 2. horizontal menu with custom style
             selected = option_menu(
                 menu_title=None,  # required
-                options=["Contact", "Report", "Datacob"],  # required
+                options=["Contact", "Datacob", "Report"],  # required
                 icons=["house", "book", "envelope"],  # optional
                 menu_icon="cast",  # optional
                 default_index=0,  # optional
