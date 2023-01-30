@@ -428,7 +428,8 @@ if authentication_status:
             cuadromdf = cuadromdf[cuadromdf['desnomctr'] == 'OOCC']
             cuadromdf = cuadromdf.drop_duplicates()
             cuadromdf = cuadromdf.set_index('nomcli')
-            cuadromdf = cuadromdf.iloc[:, [0, 2, 3,4,5,6,7,8,10,11] ]
+            #print(cuadromdf)
+            cuadromdf = cuadromdf.iloc[:, [0,1, 2, 3,4,5,6,7,8,10,11] ]
             st.dataframe(cuadromdf)
 
 
@@ -837,14 +838,8 @@ if authentication_status:
                             filter_type3 = st.selectbox(
                                 "Accion",
                                 (
-                                    "71_REVERIFICA SIN DEFECTO",
-                                    "7B_SOLUCION EN LINEA",
-                                    "7C_TEMA COMERCIALES",
-                                    "7D_GENERA NUEVO REQ",
-                                    #"7E_NO SE UBICA CLITE",
-                                    "7F_REQ MAL GENERADO",
-                                    "Requiere Visita Tecnica",
-                                    "En espera",
+                                    "Liquidar",
+                                    "Transferir",
                                 ),
                                 key="filter_type3",
                                 help="""
@@ -1051,13 +1046,8 @@ if authentication_status:
                         filter_type3 = st.selectbox(
                             "Accion",
                             (
-                                "71_REVERIFICA SIN DEFECTO",
-                                "7B_SOLUCION EN LINEA",
-                                "7C_TEMA COMERCIALES",
-                                "7D_GENERA NUEVO REQ",
-                                "7E_NO SE UBICA CLITE",
-                                "7F_REQ MAL GENERADO",
-                                "Requiere Visita Tecnica",
+                                "Liquidar",
+                                "Transferir",
                             ),
                             key="filter_type3",
                             help="""
@@ -1343,13 +1333,8 @@ if authentication_status:
                         filter_type3 = st.selectbox(
                             "Accion",
                             (
-                                "71_REVERIFICA SIN DEFECTO",
-                                "7B_SOLUCION EN LINEA",
-                                "7C_TEMA COMERCIALES",
-                                "7D_GENERA NUEVO REQ",
-                                #"7E_NO SE UBICA CLITE",
-                                "7F_REQ MAL GENERADO",
-                                "Requiere Visita Tecnica",
+                                "Liquidar",
+                                "Transferir",
                             ),
                             help="""
                             Ten encuenta tu accion `Ticket` inf.
