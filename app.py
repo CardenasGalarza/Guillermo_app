@@ -1732,7 +1732,7 @@ if authentication_status:
 
                                 xpath = driver.find_element("xpath", '//INPUT[@id="inputGsmList"]')
                                 xpath.send_keys(celu)
-                                time.sleep(6)
+                                time.sleep(8)
 
                                 if 'Cierra el caso con motivo: Cobertura WiFi' == mensaje:
 
