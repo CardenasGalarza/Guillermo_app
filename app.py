@@ -320,7 +320,9 @@ if authentication_status:
 
 
                         if dt2 == 9 and dt3 > 0:
-                                #print(dfunom)
+                            
+                            with st.spinner('Enviado mensaje...'):
+
 
                                 import streamlit as st
                                 import glob
