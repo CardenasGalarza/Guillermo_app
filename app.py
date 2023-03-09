@@ -335,7 +335,7 @@ if authentication_status:
                                 from selenium.webdriver.common.by import By
 
                                 options = Options()
-                                options.add_argument("--headless")
+                                #options.add_argument("--headless")
                                 options.add_argument("--no-sandbox")
                                 options.add_argument("--disable-dev-shm-usage")
                                 options.add_argument("--disable-gpu")
@@ -379,27 +379,27 @@ if authentication_status:
 
                                 xpath = driver.find_element("xpath", '//SPAN[@_ngcontent-c1=""][text()="SMSi"]')
                                 xpath.click()
-                                time.sleep(4)
+                                time.sleep(6)
 
                                 #celu = '925266696'
                                 #mensaje = 'Listoooossdddssss'
 
                                 xpath = driver.find_element("xpath", '//INPUT[@id="inputGsmList"]')
                                 xpath.send_keys(celu)
-                                time.sleep(8)
+                                time.sleep(9)
 
                                 xpath = driver.find_element("xpath", '//TEXTAREA[@id="txtMessage"]')
                                 xpath.send_keys(suscriptortelefono)
-                                time.sleep(6)
+                                time.sleep(8)
 
 
                                 xpath = driver.find_element("xpath", '//BUTTON[@id="buttonProcess"]')
                                 xpath.click()
-                                time.sleep(6)
+                                time.sleep(8)
 
                                 xpath = driver.find_element("xpath", '//*[@id="buttonSend"]')
                                 xpath.click()
-                                time.sleep(5)
+                                time.sleep(8)
 
                                 driver.quit()
 
